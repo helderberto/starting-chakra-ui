@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Button,
   Checkbox,
@@ -10,9 +12,12 @@ import {
   SimpleGrid,
   Text,
   VStack,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 
 export const Details = () => {
+  const colSpan = useBreakpointValue({ base: 2, md: 1 });
+
   return (
     <VStack w="full" h="full" p={10} spacing={10} alignItems="flex-start">
       <VStack alignItems="flex-start" spacing={3}>
@@ -21,13 +26,13 @@ export const Details = () => {
       </VStack>
 
       <SimpleGrid columns={2} columnGap={3} rowGap={6} w="full">
-        <GridItem colSpan={1}>
+        <GridItem colSpan={colSpan}>
           <FormControl>
             <FormLabel>First Name</FormLabel>
             <Input placeholder="John" />
           </FormControl>
         </GridItem>
-        <GridItem colSpan={1}>
+        <GridItem colSpan={colSpan}>
           <FormControl>
             <FormLabel>Last Name</FormLabel>
             <Input placeholder="Doe" />
@@ -39,13 +44,13 @@ export const Details = () => {
             <Input placeholder="Blvd. Broken Dreams 21" />
           </FormControl>
         </GridItem>
-        <GridItem colSpan={1}>
+        <GridItem colSpan={colSpan}>
           <FormControl>
             <FormLabel>City</FormLabel>
             <Input placeholder="Porto" />
           </FormControl>
         </GridItem>
-        <GridItem colSpan={1}>
+        <GridItem colSpan={colSpan}>
           <FormControl>
             <FormLabel>Country</FormLabel>
             <Select defaultValue="pt">
